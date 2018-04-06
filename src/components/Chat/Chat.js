@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Message from 'components/Message';
-import 'components/Chat/Chat.css';
+import './Chat.css';
 
 class Chat extends Component {
   state = {
@@ -14,6 +14,7 @@ class Chat extends Component {
 
   sendMessageOnEnter = e => {
     const { messages, messageInput } = this.state;
+
     if (e.key === 'Enter') {
       this.setState({
         messages: [...messages, { text: messageInput }],
@@ -24,6 +25,7 @@ class Chat extends Component {
 
   render() {
     const { messages, messageInput } = this.state;
+
     return (
       <div className="chat">
         <input
