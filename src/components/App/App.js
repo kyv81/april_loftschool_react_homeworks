@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PersonalForm from 'components/PersonalForm';
 import CardForm from 'components/CardForm';
 import Step from 'components/Step';
-import Title from 'components/Title';
 import './App.css';
 
 class App extends Component {
@@ -35,18 +34,14 @@ class App extends Component {
       cardNumber,
     } = this.state;
 
-    if (step === 1) {
-      return (
+    return (
+      (step === 1 &&
         firstName !== '' &&
         lastName !== '' &&
         email !== '' &&
-        email.includes('@')
-      );
-    } else if (step === 2) {
-      return cardNumber.length === 16;
-    } else {
-      return false;
-    }
+        email.includes('@')) ||
+      (step === 2 && cardNumber.length === 16)
+    );
   };
 
   renderForm = () => {
@@ -101,6 +96,10 @@ class App extends Component {
             <div className="form-content-step">
               {stepArr.map(item => (
                 <Step
+                  isClickable={
+                    step > item.number ? true : false
+                  }
+                  onClick={this.handleTabClick}
                   isSelected={
                     item.number === step ? true : false
                   }
@@ -111,7 +110,6 @@ class App extends Component {
                 </Step>
               ))}
             </div>
-            <Title />
             {this.renderForm()}
             <div className="button-panel">
               <button

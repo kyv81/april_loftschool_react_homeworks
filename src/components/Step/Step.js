@@ -23,6 +23,7 @@ class Step extends Component {
         className={`step ${
           isClickable ? 'step-clickable' : ''
         } ${isSelected ? 'step-selected' : ''}`}
+        onClick={this.handleClick}
       >
         <div className="step__number">{number}</div>
         <div className="step__title">{children}</div>
