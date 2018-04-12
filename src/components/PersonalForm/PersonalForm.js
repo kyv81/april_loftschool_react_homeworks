@@ -5,8 +5,7 @@ import './PersonalForm.css';
 class PersonalForm extends Component {
   handleChangeForm = e => {
     const { onChangeForm } = this.props;
-    const name = e.target.name;
-    const value = e.target.value;
+    const {name, value} = e.target;
 
     onChangeForm(name, value);
   };
@@ -20,9 +19,9 @@ class PersonalForm extends Component {
         data-test="personal-form"
       >
         <Title>Персональная информация</Title>
-        {inputNames.map(name => (
+        {inputNames.map((name, idx) => (
           <input
-            key={name}
+            key={idx}
             name={name}
             placeholder={name.toUpperCase()}
             onChange={this.handleChangeForm}

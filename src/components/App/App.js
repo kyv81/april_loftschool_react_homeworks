@@ -96,14 +96,10 @@ class App extends Component {
             <div className="form-content-step">
               {stepArr.map(item => (
                 <Step
-                  isClickable={
-                    step > item.number ? true : false
-                  }
+                  isClickable={step > item.number}
                   onClick={this.handleTabClick}
-                  isSelected={
-                    item.number === step ? true : false
-                  }
-                  key={item.text}
+                  isSelected={item.number === step}
+                  key={item.number}
                   number={item.number}
                 >
                   {item.text}

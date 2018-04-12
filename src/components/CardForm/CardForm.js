@@ -7,8 +7,7 @@ class CardForm extends Component {
 
   handleChangeForm = e => {
     const { onChangeForm } = this.props;
-    const name = e.target.name;
-    const value = e.target.value;
+    const {name, value} = e.target;
 
     onChangeForm(name, value);
   };
