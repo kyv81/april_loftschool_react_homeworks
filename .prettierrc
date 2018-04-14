@@ -4,5 +4,5 @@
   "semi": true,
   "bracketSpacing": true,
   "parser": "babylon",
-  "trailingComma": "all"
+  "trailingComma": "es5"
 }

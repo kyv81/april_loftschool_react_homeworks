@@ -11,12 +11,14 @@ class Modal extends Component {
   render() {
     const { show, children } = this.props;
 
-    return show
-      ? ReactDOM.createPortal(
+    return (
+      (show &&
+        ReactDOM.createPortal(
           children,
-          document.getElementById('portal'),
-        )
-      : null;
+          document.getElementById('portal')
+        )) ||
+      null
+    );
   }
 }
 

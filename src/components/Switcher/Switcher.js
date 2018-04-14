@@ -4,7 +4,7 @@ import './Switcher.css';
 
 class Switcher extends Component {
   static propTypes = {
-    children: PropTypes.array.isRequired,
+    children: PropTypes.object.isRequired,
   };
 
   state = {
@@ -18,7 +18,8 @@ class Switcher extends Component {
   render() {
     const { selectedChild } = this.state;
     const { children } = this.props;
-    const selectedChildElem = children[selectedChild];
+    const childrenArr = React.Children.toArray(children);
+    const selectedChildElem = childrenArr[selectedChild];
 
     return (
       <div className="switcher">

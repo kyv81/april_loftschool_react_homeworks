@@ -8,8 +8,8 @@ class CardNumberHolder extends Component {
     cardNumber: '',
   };
 
-  handleChange = inputValue => {
-    this.setState({ cardNumber: inputValue });
+  handleChange = cardNumber => {
+    this.setState({ cardNumber });
   };
 
   render() {
