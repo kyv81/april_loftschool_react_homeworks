@@ -4,7 +4,7 @@ import './Switcher.css';
 
 class Switcher extends Component {
   static propTypes = {
-    children: PropTypes.object.isRequired,
+    children: PropTypes.node.isRequired,
   };
 
   state = {
