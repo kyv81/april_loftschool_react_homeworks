@@ -14,11 +14,9 @@ export default (state = { orders: [] }, action) => {
     case MOVE_ORDER_TO_CUSTOMER:
       return {
         ...state,
-        orders: [
-          ...state.orders.filter(
-            item => item.id !== action.payload.id,
-          ),
-        ],
+        orders: state.orders.filter(
+          item => item.id !== action.payload.id,
+        ),
       };
     default:
       return state;

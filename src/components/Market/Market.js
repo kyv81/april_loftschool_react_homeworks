@@ -49,27 +49,31 @@ export class Market extends Component {
     market: PropTypes.array.isRequired,
   };
 
+  handleClickCreateOrder = () => {
+    const { createOrder } = this.props;
+    createOrder(getNewOrder());
+  };
+
+  handleClickMoveOrder = () => {
+    const { market, moveOrderToFarm } = this.props;
+    moveOrderToFarm(market[market.length - 1]);
+  };
+
   render() {
-    const {
-      createOrder,
-      moveOrderToFarm,
-      market,
-    } = this.props;
+    const { market } = this.props;
 
     return (
       <div className="market">
         <h2>Новые заказы в магазине</h2>
         <button
           className="new-orders__create-button"
-          onClick={() => createOrder(getNewOrder())}
+          onClick={this.handleClickCreateOrder}
         >
           Создать заказ
         </button>
         <button
           disabled={!market.length}
-          onClick={() => {
-            moveOrderToFarm(market[market.length - 1]);
-          }}
+          onClick={this.handleClickMoveOrder}
         >
           Отправить заказ на ферму
         </button>

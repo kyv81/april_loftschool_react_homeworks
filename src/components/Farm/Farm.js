@@ -11,17 +11,20 @@ export class Farm extends Component {
     moveOrderToCustomer: PropTypes.func.isRequired,
   };
 
-  render() {
+  handleClickMoveOrder = () => {
     const { farm, moveOrderToCustomer } = this.props;
+    moveOrderToCustomer(farm[farm.length - 1]);
+  };
+
+  render() {
+    const { farm } = this.props;
 
     return (
       <div className="farm">
         <h2>Производство на ферме</h2>
         <button
           disabled={!farm.length}
-          onClick={() =>
-            moveOrderToCustomer(farm[farm.length - 1])
-          }
+          onClick={this.handleClickMoveOrder}
         >
           Отправить урожай клиенту
         </button>
