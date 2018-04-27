@@ -1,0 +1,19 @@
+.t-search-result {
+  margin-top: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.t-preview {
+  text-align: center;
+  width: 22%;
+  margin-right: 13px;
+  margin-bottom: 13px;
+}
+
+.t-link {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}

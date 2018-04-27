@@ -1,0 +1,9 @@
+.show-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.cast {
+  display: flex;
+  flex-wrap: wrap;
+}
