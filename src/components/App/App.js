@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Search from 'components/Search';
 import ShowPreview from 'components/ShowPreview';
+import Load from 'components/Load';
+import Err from 'components/Err';
 import './App.css';
 import { connect } from 'react-redux';
 import { searchRequest } from 'actions/search';
@@ -46,8 +48,8 @@ class App extends Component {
       showRequest,
     } = this.props;
 
-    if (isLoading) return <p>Данные загружаются...</p>;
-    if (error) return <p>Ошибка загрузки</p>;
+    if (isLoading) return Load();
+    if (error) return Err();
 
     return (
       <div className="t-search-result">

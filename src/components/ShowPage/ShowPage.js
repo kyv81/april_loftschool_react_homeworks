@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Load from 'components/Load';
+import Err from 'components/Err';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { getEntities, getIsShowLoading, getShowError } from 'reducers/shows';
@@ -12,8 +14,8 @@ class ShowPage extends Component {
       showError,
     } = this.props;
 
-    if (isShowLoading) return <p>Данные загружаются...</p>;
-    if (showError) return <p>Ошибка загрузки</p>;
+    if (isShowLoading) return Load();
+    if (showError) return Err();
 
     return (
       <div className="show-page">
