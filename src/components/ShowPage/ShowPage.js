@@ -18,7 +18,7 @@ class ShowPage extends Component {
     return (
       <div className="show-page">
         <p>{name}</p>
-        {(image && <img src={image.medium} alt={name} />) || null}
+        {image && <img src={image.medium} alt={name} />}
         <div dangerouslySetInnerHTML={{ __html: summary }} />
         <div className="cast">
           {!_embedded.cast.length && <Redirect to="/" />}

@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import './ShowPreview.css';
 import { Link } from 'react-router-dom';
 
@@ -10,29 +10,20 @@ class ShowPreview extends Component {
   };
 
   render() {
-    const {
-      id,
-      image,
-      // match: { url },
-      url,
-      name,
-      summary,
-    } = this.props;
+    const { id, image, url, name, summary } = this.props;
 
     return (
-      <Fragment>
-        <div className="t-preview">
-          <Link
-            to={`${url}shows/${id}`}
-            onClick={this.handleClick}
-            className="t-link"
-          >
-            <h3>{name}</h3>
-          </Link>
-          {(image && <img src={image.medium} alt={name} />) || null}
-          <div dangerouslySetInnerHTML={{ __html: summary }} />
-        </div>
-      </Fragment>
+      <div className="t-preview">
+        <Link
+          to={`${url}shows/${id}`}
+          onClick={this.handleClick}
+          className="t-link"
+        >
+          <h3>{name}</h3>
+        </Link>
+        {image && <img src={image.medium} alt={name} />}
+        <div dangerouslySetInnerHTML={{ __html: summary }} />
+      </div>
     );
   }
 }

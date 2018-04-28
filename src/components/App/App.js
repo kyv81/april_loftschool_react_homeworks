@@ -53,7 +53,6 @@ class App extends Component {
       <div className="t-search-result">
         {shows.map(({ id, image, name, summary }) => (
           <ShowPreview
-            // {...this.props}
             key={id}
             id={id}
             image={image}
